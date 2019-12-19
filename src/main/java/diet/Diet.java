@@ -6,6 +6,7 @@ import diet.Food.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -39,14 +40,14 @@ public class Diet implements IDiet {
   public String evaluateCalories(String meal) {
     int nbrCalories = calculCalories(meal);
     // we compare the number of calories with the average and we return the adequate string
-		if (nbrCalories == AVERAGE_CALORIES) {
-			return "good, number of calories as expected";
-		}
-		if (nbrCalories < AVERAGE_CALORIES) {
-			return "still " + (AVERAGE_CALORIES - nbrCalories) + " calories to be added";
-		} else {
-			return "still " + (nbrCalories - AVERAGE_CALORIES) + " calories to be removed";
-		}
+    if (nbrCalories == AVERAGE_CALORIES) {
+      return "good, number of calories as expected";
+    }
+    if (nbrCalories < AVERAGE_CALORIES) {
+      return "still " + (AVERAGE_CALORIES - nbrCalories) + " calories to be added";
+    } else {
+      return "still " + (nbrCalories - AVERAGE_CALORIES) + " calories to be removed";
+    }
   }
 
   @Override
@@ -54,35 +55,35 @@ public class Diet implements IDiet {
     String[] mealList = meal.split(",");
 
     Food food;
-		List<Category> categories = new ArrayList<>(Arrays.asList(Category.values()));
-		HashMap<Category, Boolean>  containedCategories = new HashMap<>();
+    List<Category> categories = new ArrayList<>(Arrays.asList(Category.values()));
+		HashSet<Category> containedCategories = new HashSet<Category>();
     for (String foodName : mealList) {
       food = foods.get(foodName);
-      for(Category category : categories) {
-      	if(food.getCategory() == category) {
-					containedCategories.put(category, true);
-				}
-			}
+      for (Category category : categories) {
+        if (food.getCategory() == category) {
+          containedCategories.add(category);
+        }
+      }
     }
 
     String missingCategories = new String();
     boolean isCategoryMissing = false;
-		for(Category category : categories) {
-			if(!containedCategories.containsKey(category)) {
-				if(!isCategoryMissing) {
-					missingCategories += category.name();
-				} else {
-					missingCategories += " and " + category.name();
-				}
-				isCategoryMissing = true;
-			}
-		}
+    for (Category category : categories) {
+      if (!containedCategories.contains(category)) {
+        if (!isCategoryMissing) {
+          missingCategories += category.name();
+        } else {
+          missingCategories += " and " + category.name();
+        }
+        isCategoryMissing = true;
+      }
+    }
 
-		if(isCategoryMissing) {
-			return "your meal doesn't contain " + missingCategories + "!";
-		} else {
-			return "good, your meal contains all required nutrients!";
-		}
+    if (isCategoryMissing) {
+      return "your meal doesn't contain " + missingCategories + "!";
+    } else {
+      return "good, your meal contains all required nutrients!";
+    }
   }
 
 }

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c173be15-9390-4e9e-a9f9-301b0d657f16" name="Default Changelist" comment="" />
+    <list default="true" id="c173be15-9390-4e9e-a9f9-301b0d657f16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/diet/Diet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/diet/Diet.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +33,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VDDDDFO6NhsIAPg242kcsBDsjv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -54,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DietTest.missing_nutrient_in_the_meal2">
+  <component name="RunManager" selected="JUnit.DietTest">
     <configuration name="DietTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="com.sqli.echallenge" />
       <option name="PACKAGE_NAME" value="" />
@@ -76,8 +85,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DietTest.missing_nutrient_in_the_meal2" />
         <item itemvalue="JUnit.DietTest" />
+        <item itemvalue="JUnit.DietTest.missing_nutrient_in_the_meal2" />
       </list>
     </recent_temporary>
   </component>
@@ -91,11 +100,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576778649314</updated>
-      <workItem from="1576778650742" duration="3392000" />
+      <workItem from="1576778650742" duration="3907000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
