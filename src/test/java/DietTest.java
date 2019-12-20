@@ -60,9 +60,4 @@ public class DietTest {
         Assert.assertEquals("your meal doesn't contain fats!", diet.evaluateNutrients("egg,fruit"));
     }
 
-  @Test
-  public void missing_two_nutrient_in_the_meal(){
-    Assert.assertEquals("your meal doesn't contain carbohydrates and fats!", diet.evaluateNutrients("egg"));
-  }
-
 }

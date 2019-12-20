@@ -50,40 +50,24 @@ public class Diet implements IDiet {
     }
   }
 
+
   @Override
   public String evaluateNutrients(String meal) {
     String[] mealList = meal.split(",");
-
-    Food food;
     List<Category> categories = new ArrayList<>(Arrays.asList(Category.values()));
-		HashSet<Category> containedCategories = new HashSet<Category>();
+    HashSet<Category> containedCategories = new HashSet<>();
+
     for (String foodName : mealList) {
-      food = foods.get(foodName);
-      for (Category category : categories) {
-        if (food.getCategory() == category) {
-          containedCategories.add(category);
-        }
-      }
+      containedCategories.add(foods.get(foodName).getCategory());
     }
 
-    String missingCategories = new String();
-    boolean isCategoryMissing = false;
     for (Category category : categories) {
       if (!containedCategories.contains(category)) {
-        if (!isCategoryMissing) {
-          missingCategories += category.name();
-        } else {
-          missingCategories += " and " + category.name();
-        }
-        isCategoryMissing = true;
+        return "your meal doesn't contain " + category + "!";
       }
     }
 
-    if (isCategoryMissing) {
-      return "your meal doesn't contain " + missingCategories + "!";
-    } else {
-      return "good, your meal contains all required nutrients!";
-    }
+    return "good, your meal contains all required nutrients!";
   }
 
 }
