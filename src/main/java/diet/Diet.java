@@ -61,13 +61,20 @@ public class Diet implements IDiet {
       containedCategories.add(foods.get(foodName).getCategory());
     }
 
+    String missingCategories = new String();
+    boolean isCategoryMissing = false;
     for (Category category : categories) {
       if (!containedCategories.contains(category)) {
-        return "your meal doesn't contain " + category + "!";
+        missingCategories += !isCategoryMissing ? category.name() : " and " + category.name();
+        isCategoryMissing = true;
       }
     }
 
-    return "good, your meal contains all required nutrients!";
+    if (isCategoryMissing) {
+      return "your meal doesn't contain " + missingCategories + "!";
+    } else {
+      return "good, your meal contains all required nutrients!";
+    }
   }
 
 }
